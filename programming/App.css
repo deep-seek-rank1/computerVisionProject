@@ -1,0 +1,44 @@
+/* Add these new styles */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(120, 134, 113);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.loader-overlay.fade-out {
+  opacity: 0;
+}
+
+/* Keep your existing styles */
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.image-icon {
+  color: #ffffff;
+  animation: pulse 1.5s infinite ease-in-out;
+  font-size: 100px;
+  margin-bottom: 30px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.App {
+  text-align: center;
+}
