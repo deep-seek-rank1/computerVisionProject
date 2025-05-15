@@ -1,0 +1,230 @@
+/* ===== Loader Overlay ===== */
+.about__loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(120, 134, 113);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.about__loader-overlay--fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ===== Loader Content ===== */
+.about__loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ===== Camera Icon ===== */
+.about__loader-icon {
+  color: #ffffff;
+  font-size: 6.25rem;
+  margin-bottom: 1.875rem;
+  animation: about__pulse-animation 1.5s infinite ease-in-out;
+}
+
+/* ===== Spinner ===== */
+.about__loader-spinner {
+  /* DotLoader specific styles */
+}
+
+/* ===== Animation ===== */
+@keyframes about__pulse-animation {
+  0% { 
+    transform: scale(1); 
+    opacity: 0.9;
+  }
+  50% { 
+    transform: scale(1.1); 
+    opacity: 1;
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 0.9;
+  }
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .about__loader-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about__loader-content {
+    gap: 1.5rem;
+  }
+}
+
+
+
+/* Header Styles */
+.header-about {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Needed for the underline positioning */
+}
+
+.header-about h1 {
+  color: rgb(81, 100, 70);
+  margin: 0;
+  padding: 0;
+}
+
+/* Underline Animation */
+.header-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: rgb(81, 100, 70);
+  transition: width 1s ease-out;
+}
+
+/* When content is loaded */
+.content-loaded .header-underline {
+  width: 100%;
+}
+
+
+.slider-page{
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+
+.slide img {
+  width: 50%;
+  height: 100%;
+  object-fit:fill;
+  /* border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px; */
+  border: 15px solid white ;
+  border-radius: 25px;
+  box-shadow: 0 4px 14px rgba(35, 35, 35, 0.15);
+
+}
+
+.left-arrow, .right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgb(120, 134, 113);;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0 1rem;
+  height: 3rem;
+  border-radius:50%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  -ms-border-radius:50%;
+  -o-border-radius:50%;
+}
+
+.left-arrow {
+  left: 10rem;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.right-arrow {
+  right: 10rem;
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+}
+.left-arrow:hover,
+.right-arrow:hover{
+  color: rgb(120, 134, 113);;
+  background-color: white;
+  border: 2px  rgb(120, 134, 113) solid ;
+  
+}
+
+
+.no-images {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+
+@keyframes zoomFadeIn {
+from {
+  transform: scale(0.9);
+  opacity: 0;
+}
+to {
+  transform: scale(1);
+  opacity: 1;
+}
+}
+
+@keyframes zoomFadeOut {
+from {
+  transform: scale(1);
+  opacity: 1;
+}
+to {
+  transform: scale(1.1);
+  opacity: 0;
+}
+}
+
+.slide-in {
+animation: zoomFadeIn 0.4s ease forwards;
+}
+
+.slide-out {
+animation: zoomFadeOut 0.4s ease forwards;
+}
